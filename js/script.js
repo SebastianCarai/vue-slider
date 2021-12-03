@@ -46,6 +46,9 @@ const app = new Vue(
             } else{
                 this.slideIndex = this.slides.length - 1;
             }
+        },
+        thisSlide: function (clickedIndex){
+            this.slideIndex = clickedIndex;
         }
     }
 });
