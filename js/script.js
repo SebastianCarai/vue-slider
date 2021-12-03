@@ -4,6 +4,7 @@ const app = new Vue(
     el : '#root',
     data: {
         slideIndex : 0,
+        autoChangeSlide: null,
         slides: [
             {
                 image: 'img/01.jpg',
@@ -50,5 +51,10 @@ const app = new Vue(
         thisSlide: function (clickedIndex){
             this.slideIndex = clickedIndex;
         }
+    },
+    created(){
+        autoChangeSlide= setInterval(() =>{
+            this.nextSlide()
+        }, 3000)
     }
 });
