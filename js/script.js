@@ -50,11 +50,17 @@ const app = new Vue(
         },
         thisSlide: function (clickedIndex){
             this.slideIndex = clickedIndex;
+        },
+        AutoPlay: function(){
+            this.autoChangeSlide= setInterval(() =>{
+                this.nextSlide();
+            }, 3000)
+        },
+        stopAutoPlay: function(){
+            clearInterval(this.autoChangeSlide);
         }
     },
     created(){
-        autoChangeSlide= setInterval(() =>{
-            this.nextSlide()
-        }, 3000)
+        this.AutoPlay();
     }
 });
