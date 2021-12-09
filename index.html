@@ -18,7 +18,7 @@
             <div class="slider_container">
     
                 <!-- Big image and texts -->
-                <div class="col_left">
+                <div class="col_left" @mouseenter="stopAutoPlay" @mouseleave="AutoPlay">
     
                     <!-- Image -->
                     <div class="img_container">
@@ -41,7 +41,7 @@
     
                     <!-- Thumbnails -->
                     <div class="thumbnails_container">
-                        <div class="thumb grayscale" v-for="element,index in slides" :class="{active: index === slideIndex}" @click="thisSlide(index)" @mouseenter="stopAutoPlay" @mouseleave="AutoPlay">
+                        <div class="thumb grayscale" v-for="element,index in slides" :class="{active: index === slideIndex}" @click="thisSlide(index)">
                             <img :src="element.image" alt="">
                         </div>
                     </div>
